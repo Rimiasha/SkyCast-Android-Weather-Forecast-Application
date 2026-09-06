@@ -33,11 +33,7 @@ class WeatherWidgetProvider : AppWidgetProvider() {
     }
 }
 
-/**
- * Fetches fresh weather data and updates the widget. Requires location
- * permission to already be granted via the main app - if it never was,
- * this fails gracefully and the widget keeps showing its last known values.
- */
+
 class WeatherWidgetWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
     override suspend fun doWork(): Result {
         return try {
@@ -65,7 +61,7 @@ class WeatherWidgetWorker(context: Context, params: WorkerParameters) : Coroutin
     }
 }
 
-/** Android enforces a minimum periodic interval of 15 minutes; 30 balances freshness vs. battery. */
+
 fun scheduleWidgetUpdates(context: Context) {
     val request = PeriodicWorkRequestBuilder<WeatherWidgetWorker>(30, TimeUnit.MINUTES).build()
     WorkManager.getInstance(context).enqueueUniquePeriodicWork(

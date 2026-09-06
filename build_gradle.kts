@@ -1,6 +1,6 @@
 import java.util.Properties
 
-// Reads OPEN_WEATHER_API_KEY from local.properties (gitignored) - see README.md
+
 val localProperties = Properties()
 rootProject.file("local.properties").let { if (it.exists()) localProperties.load(it.inputStream()) }
 
@@ -36,8 +36,6 @@ android {
         buildConfig = true
     }
     composeOptions {
-        // Must match your Kotlin plugin version - check the Compose-Kotlin
-        // compatibility map if you change the Kotlin version above.
         kotlinCompilerExtensionVersion = "1.5.14"
     }
 }

@@ -1,6 +1,6 @@
 # 🌤️SkyCast-Android Weather Forecast Application
 
-## Overview
+## 📌 Overview
 
 This project demonstrates a native Android Weather App built with Kotlin and Jetpack Compose. The app collects real-time weather data based on the user's location and displays current conditions, a 5-day forecast, and a home-screen widget for at-a-glance updates.
 
